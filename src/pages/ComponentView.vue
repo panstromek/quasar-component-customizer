@@ -18,6 +18,12 @@
         />
       </div>
     </div>
+    <div class="text-h5 q-pa-md">
+      Code:
+    </div>
+    <code>
+      {{rendered}}
+    </code>
   </q-page>
 </template>
 
@@ -95,9 +101,34 @@ export default {
       props,
       binding
     }
+  },
+  computed: {
+    rendered () {
+      return `<${this.component.name}${this.renderedProps}/>`
+    },
+    renderedProps () {
+      return Object.entries(this.binding)
+        .map(([prop, value]) => {
+          if (!value) {
+            return ``
+          }
+          if (value === true) {
+            return `
+              ${prop}
+            `
+          }
+          if (typeof value === 'number' || !isNaN(Number(value))) {
+            return `
+          :${prop}="${value}"
+          `
+          }
+
+          return `
+          ${prop}="${value}"
+          `
+        })
+        .reduce((list, attr) => list + attr, ``)
+    }
   }
 }
 </script>
-
-<style>
-</style>
