@@ -1,0 +1,45 @@
+{
+  "name": "q-testing-test",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Quasar App",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "panstromek <panstromek@seznam.cz>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"See package.json => scripts for available tests.\" && exit 0",
+    "test:unit": "jest --updateSnapshot",
+    "test:unit:coverage": "jest --coverage",
+    "test:unit:watch": "jest --watch",
+    "serve:test:coverage": "quasar serve test/jest/coverage/lcov-report/ --port 8788",
+    "devAndTest": "concurrently \"quasar dev\" \"jest --watchAll\""
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0-alpha.0",
+    "axios": "^0.18.0",
+    "quasar": "^1.0.0-alpha.21",
+    "vue-i18n": "^7.3.3"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0-alpha.13",
+    "@quasar/quasar-app-extension-testing-unit-jest": "^1.0.0-beta.1",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "jsdoc-vuejs": "^2.4.0",
+    "strip-ansi": "=3.0.1"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}
