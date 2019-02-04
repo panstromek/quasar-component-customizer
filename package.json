@@ -4,7 +4,7 @@
   "description": "A Quasar Framework app",
   "productName": "Quasar App",
   "cordovaId": "org.cordova.quasar.app",
-  "author": "panstromek <panstromek@seznam.cz>",
+  "author": "panstromek",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
